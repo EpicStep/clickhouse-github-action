@@ -1,0 +1,10 @@
+name: 'ClickHouse in GitHub Actions'
+description: 'Start a ClickHouse'
+
+branding:
+  icon: 'database'
+  color: 'yellow'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
