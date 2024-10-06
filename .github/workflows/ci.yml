@@ -13,7 +13,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
       - name: Set up clickhouse
-        uses: EpicStep/clickhouse-github-action@${{ env.GITHUB_SHA }}
+        uses: EpicStep/clickhouse-github-action@v1.0.0
       - name: Run tests
         run: go test -v
         working-directory: test
