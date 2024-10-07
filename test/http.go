@@ -1,21 +1,21 @@
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
+	"errors"
 	"net/http"
 )
 
-func SendQuery(query string) (string, error) {
-	resp, err := http.Get(fmt.Sprintf("http://localhost:8123/?query=%s", query))
+func CheckClickHouseAvailability() error {
+	resp, err := http.Get(`http://localhost:8123/?query=SELECT%201`)
 	if err != nil {
-		return "", err
+		return err
 	}
 
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return "", err
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		return errors.New("unexpected status code: " + resp.Status)
 	}
 
-	return string(body), nil
+	return nil
 }
