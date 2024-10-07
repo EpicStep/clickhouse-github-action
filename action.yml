@@ -5,6 +5,21 @@ branding:
   icon: 'database'
   color: 'yellow'
 
+inputs:
+  version:
+    description: 'Version of ClickHouse'
+    required: false
+    default: 'latest'
+  bind_native:
+    description: 'Bind for native interface (https://clickhouse.com/docs/en/interfaces/tcp)'
+    required: false
+    default: '9000'
+  bind_http:
+    description: 'Bind for HTTP interface (https://clickhouse.com/docs/en/interfaces/http)'
+    required: false
+    default: '8123'
+
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
