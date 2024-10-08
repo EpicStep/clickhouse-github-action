@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 INPUT_VERSION="${INPUT_VERSION:-latest}"
 INPUT_BIND_NATIVE="${INPUT_BIND_NATIVE:-9000}"

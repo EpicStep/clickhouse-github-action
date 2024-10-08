@@ -6,7 +6,7 @@ This action sets up a ClickHouse.
 
 ```yaml
 steps:
-  - uses: EpicStep/clickhouse-github-action@v1.1.0
+  - uses: EpicStep/clickhouse-github-action@v1.1.1
     with:
       version: 22 # default: latest
       bind_native: 9090 # default: 9000 (https://clickhouse.com/docs/en/interfaces/tcp)
